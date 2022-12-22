@@ -1,0 +1,43 @@
+import {
+  watchApprovePageDraft,
+  watchDeletePageAtom,
+  watchDeletePageDraft,
+  watchForkPageAtom,
+  watchGetPagesAtom,
+  watchGetPagesDraft,
+  watchLoadMorePagesAtom,
+  watchLoadMorePagesDraft,
+  watchRejectPageDraft,
+  watchCreateUserPageCategory,
+  watchGetCategoriesOfPageProduct,
+  watchHotfixPageAtom,
+  watchCommitPageDraft,
+  watchPublishPageAtom,
+  watchEnableShopifyPageAtom,
+  watchDisableShopifyPageAtom,
+  watchEnableShopifyPageDraft,
+  watchDisableShopifyPageDraft,
+} from './store/sagas';
+
+export * from './Pages';
+
+export const sagasPageManagement = [
+  watchApprovePageDraft,
+  watchDeletePageAtom,
+  watchDeletePageDraft,
+  watchForkPageAtom,
+  watchGetPagesAtom,
+  watchGetPagesDraft,
+  watchLoadMorePagesAtom,
+  watchLoadMorePagesDraft,
+  watchRejectPageDraft,
+  watchCreateUserPageCategory,
+  watchGetCategoriesOfPageProduct,
+  watchHotfixPageAtom,
+  watchCommitPageDraft,
+  watchPublishPageAtom,
+  watchEnableShopifyPageAtom,
+  watchDisableShopifyPageAtom,
+  watchEnableShopifyPageDraft,
+  watchDisableShopifyPageDraft,
+];

@@ -1,0 +1,22 @@
+import { createGlobalState } from 'react-use';
+import storage from 'utils/functions/storage';
+import { TourPlacement } from './styles';
+import { Pathname } from './types';
+
+export const CLASSNAME = '__tour__';
+export const PREFIX = 'index_';
+export const SKIP_NAME = '@Tour/skip';
+export const skipStorage = storage.getItem(SKIP_NAME);
+export const useGlobalOpen = createGlobalState<Record<string, boolean>>({ default: true });
+export const useGlobalIndexes = createGlobalState<Record<Pathname, number[]>>({} as any);
+export const useGlobalIndexesActive = createGlobalState<{ [K in Pathname]?: number }>({});
+export const useGlobalSkip = createGlobalState<boolean>(!!skipStorage && skipStorage === 'true');
+export const useGlobalOffsetTop = createGlobalState<Record<string, number>>({});
+export const useGlobalOffsetLeft = createGlobalState<Record<string, number>>({});
+export const useGlobalOffsetWidth = createGlobalState<Record<string, number>>({});
+export const useGlobalOffsetHeight = createGlobalState<Record<string, number>>({});
+export const useGlobalTopProps = createGlobalState<Record<string, number>>({});
+export const useGlobalLeftProps = createGlobalState<Record<string, number>>({});
+export const useGlobalRightProps = createGlobalState<Record<string, number | undefined>>({});
+export const useGlobalMoveFreelyProps = createGlobalState<Record<string, boolean>>({});
+export const useGlobalPlacementProps = createGlobalState<Record<string, TourPlacement>>({});

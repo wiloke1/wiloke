@@ -1,0 +1,47 @@
+{
+  "name": "wiloke-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "prestart": "yarn",
+    "start": "turbo run start --parallel",
+    "start:veda": "turbo run start --parallel --filter veda",
+    "build": "turbo run build",
+    "build:veda": "turbo run build --filter veda",
+    "lint": "turbo run lint",
+    "tsc": "turbo run tsc"
+  },
+  "lint-staged": {
+    "apps/**/*.{js,ts,jsx,tsx}": [
+      "eslint --fix",
+      "git add"
+    ],
+    "packages/**/*.{js,ts,jsx,tsx}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "devDependencies": {
+    "eslint-config-custom": "*",
+    "turbo": "latest",
+    "cross-env": "^6.0.3",
+    "husky": "^3.1.0",
+    "lint-staged": "8.1.7"
+  },
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": ">=14.0.0"
+  },
+  "resolutions": {
+    "@types/react": "16.9.53"
+  }
+}

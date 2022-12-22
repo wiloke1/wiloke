@@ -1,0 +1,26 @@
+import ColorPicker2 from 'components/ColorPicker2';
+import FontField from 'components/FontField/FontField';
+import { NumberInput } from 'components/NumberInput';
+import Radio from 'components/Radio';
+import Responsive from 'components/Responsive';
+import SelectAntd from 'components/SelectAntd';
+import SingleDatePicker from 'components/SingleDatePicker';
+import SliderBeauty from 'components/SliderBeauty';
+import SwitchBeauty, { SwitchBeautyProps } from 'components/SwitchBeauty';
+import Textarea from 'components/Textarea';
+import { TextEditor2 } from 'components/TextEditor2';
+import TextInput from 'components/TextInput';
+import withDebounce from 'hocs/withDebounce';
+
+export const SliderBeautyDebounce = withDebounce(SliderBeauty, 'value', 'onValueChange');
+export const TextInputDebounce = withDebounce(TextInput, 'value', 'onValueChange');
+export const ColorPickerBeautyDebounce = withDebounce(ColorPicker2, 'color', 'onChange');
+export const TextEditorDebounce = withDebounce(TextEditor2, 'value', 'onChange');
+export const TextareaDebounce = withDebounce(Textarea, 'value', 'onChangeText');
+export const SelectAntdDebounce = SelectAntd;
+export const RadioDebounce = Radio;
+export const SwitchBeautyDebounce = ({ borderColor, ...rest }: SwitchBeautyProps) => <SwitchBeauty {...rest} borderColor={borderColor ?? 'gray3'} />;
+export const FontFieldDebounce = FontField;
+export const NumberInputDebounce = withDebounce(NumberInput, 'value', 'onValueChange');
+export const DatePickerDebounce = SingleDatePicker;
+export const ResponsiveDebounce = Responsive;
